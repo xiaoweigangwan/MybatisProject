@@ -3,7 +3,7 @@ public static final SqlSessionFactory sqlSessionFactory = null;
 public static final SqlSessionFactory getSessionFactory(){
 	if(sqlSessionFactory==null){
 	String resource = "mapconfig.xml"
-	InputStream inputStream = new InputStream(resource);
+	InputStream inputStream = Resources.getResourceAsStream(resource);
 	try{
 		sqlSessionFactory = new SqlSessionFactoryBuild().build(inputStream);
 
