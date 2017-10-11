@@ -15,7 +15,7 @@
      </environment>  
   </environments>
   <mappers>
-       <mapper resource="com/xhm/mapper/UserInfoMapper.xml"/>
+       <mapper resource="com/xhm/mapper/userInfoMapping.xml"/>
   </mappers>  
 
  </configuration>
