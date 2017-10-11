@@ -1,1 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.testcurd">
+<insert id="insertUserInfo" parameterType="UserInfo" useGeneratedKeys="true" keyProperty="id">
+insert into userinfo(username,password,age,insertDate) values(#{username},#{password},#{age},#{insertdate})
+</insert>
+<select id="getUserinfoById" parameterType="int" resultType="UserInfo">
+  select * from userinfo where id = #{id}
+</select>
+<delete id="deleteUserById" parameterType="int">
+  delete * from userinfo where id  = #{id}
+</delete>
+<select id="getAllUserinfo" resultType="UserInfo">
+  select * from userinfo
+</select>
+<update id = "updateUserInfo" parameterType="UserInfo">
+  update userinfo set username=#{username},password=#{password},age=#{age},insertDate=#{insertdate} where id = #{id}
+</update>
+</mapper>
 
