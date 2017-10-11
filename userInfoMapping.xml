@@ -15,6 +15,9 @@ insert into userinfo(username,password,age,insertDate) values(#{username},#{pass
 <select id="getAllUserinfo" resultType="UserInfo">
   select * from userinfo
 </select>
+  <select id="getUserinfo" parameterType="map" resultType="map">
+  select * from userinfo where id >#{id} order by ${ordersql}
+</select>
 <update id = "updateUserInfo" parameterType="UserInfo">
   update userinfo set username=#{username},password=#{password},age=#{age},insertDate=#{insertdate} where id = #{id}
 </update>
